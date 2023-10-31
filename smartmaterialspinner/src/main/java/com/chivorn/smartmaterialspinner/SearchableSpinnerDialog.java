@@ -215,9 +215,11 @@ public class SearchableSpinnerDialog<T> extends DialogFragment implements Search
                         }
                     }
 
-                    T item = searchArrayAdapter.getItem(position);
-                    if (selectedSearchItemColor != 0 && position >= 0 && item != null && item.equals(selectedItem)) {
-                        tvListItem.setTextColor(selectedSearchItemColor);
+                    if (!searchArrayAdapter.isEmpty()) {
+                        T item = searchArrayAdapter.getItem(position);
+                        if (selectedSearchItemColor != 0 && position >= 0 && item != null && item.equals(selectedItem)) {
+                            tvListItem.setTextColor(selectedSearchItemColor);
+                        }
                     }
                     return listView;
                 }
